@@ -10,7 +10,7 @@ const OUTPUT_FOLDER_PATH = './output-folder/';
 function writeToFile(file, newList) {
     console.log('start to writeToFile', file)
 
-    var csvStream = fastCSV.createWriteStream({ headers: true }),
+    var csvStream = fastCSV.format({ headers: true }),
         writableStream = fs.createWriteStream(`./${OUTPUT_FOLDER_PATH}/${file}.csv`);
 
     writableStream.on("finish", function () {
