@@ -6,6 +6,9 @@ const fs = require('fs')
 const INPUT_FOLDER_PATH = './input-folder/';
 const OUTPUT_FOLDER_PATH = './output-folder/';
 
+if (!fs.existsSync(OUTPUT_FOLDER_PATH)){
+    fs.mkdirSync(OUTPUT_FOLDER_PATH);
+}
 
 function writeToFile(file, newList) {
     console.log('start to writeToFile', file)
